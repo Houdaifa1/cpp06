@@ -1,6 +1,6 @@
 NAME = convert
 
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp ScalarConverter.cpp detect_type.cpp convert_base.cpp
 cc = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98

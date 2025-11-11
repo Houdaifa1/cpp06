@@ -1,6 +1,10 @@
 # ifndef LITERALTYPE_HPP
 # define LITERALTYPE_HPP
 
+# include <iostream>
+# include <string>
+# include <string>
+# include <limits>
 
 enum LiteralType
 {
@@ -11,10 +15,15 @@ enum LiteralType
     ERROR,
     FPSEUDO,
     DPSEUDO,
-    NONPRINT,
     INTOVERFLOW,
-
 };
+
+LiteralType detect_type(std::string &literal);
+void        char_convert(const std::string &literal);
+void        int_convert(const std::string &literal);
+void        int_overflow_convert(const std::string &literal);
+void        float_convert(const std::string &literal);
+void        double_convert(const std::string &literal);
 
 
 

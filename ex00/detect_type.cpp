@@ -52,6 +52,7 @@ bool is_int(const std::string &literal, LiteralType &type)
     unsigned long long limit = 2147483647;
     unsigned long long value = 0;
     size_t i = 0;
+     size_t j = 0;
 
     if (literal[i] == '-')
     {
@@ -60,12 +61,15 @@ bool is_int(const std::string &literal, LiteralType &type)
         if (i == literal.size())
             return false;
     }
-    for (size_t j = 0; j < literal.size(); j++)
+    j = i;
+    while ( j < literal.size())
     {
         char ch = literal[j];
         if (!isdigit(ch))
             return false;
+        j++;
     }
+
     while ( i < literal.size())
     {
         c = literal[i];
@@ -167,4 +171,21 @@ LiteralType detect_type(std::string &literal)
     if (is_double(literal, type))
         return type;
     return ERROR;
+}
+
+
+void        fpseudo_convert(const std::string &literal)
+{
+    std::cout << "char: impossible\n";
+    std::cout << "int: impossible\n";
+    std::cout << "float: " << literal << '\n';
+    std::cout << "double: " << literal.substr(0, literal.size() - 1) << '\n';
+}
+
+void        dpseudo_convert(const std::string &literal)
+{
+    std::cout << "char: impossible\n";
+    std::cout << "int: impossible\n";
+    std::cout << "float: " << literal << "f\n";
+    std::cout << "double: " << literal << '\n';
 }

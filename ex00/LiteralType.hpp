@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <string>
+# include <errno.h>
 # include <limits>
 
 enum LiteralType
@@ -24,6 +25,9 @@ void        int_convert(const std::string &literal);
 void        int_overflow_convert(const std::string &literal);
 void        float_convert(const std::string &literal);
 void        double_convert(const std::string &literal);
+void        fpseudo_convert(const std::string &literal);
+void        dpseudo_convert(const std::string &literal);
+
 
 
 

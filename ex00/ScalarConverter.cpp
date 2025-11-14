@@ -23,6 +23,12 @@ void ScalarConverter::convert(std::string literal)
         case DOUBLE:
             float_convert(literal);
             break;
+        case FPSEUDO:
+            fpseudo_convert(literal);
+            break;
+        case DPSEUDO:
+            dpseudo_convert(literal);
+            break;
         default:
             std::cout << "Error!! It shoud be char or int or float or double\n";
             break;
